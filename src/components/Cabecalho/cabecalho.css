@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+.cabecalho {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 10px 6px 20px 0 rgba(139, 139, 139, 0.6509803922);
+  border-radius: 0px;
+}
+.cabecalho nav ul {
+  display: flex;
+  list-style: none;
+}
+.cabecalho nav ul li {
+  margin: 0 20px;
+}
+.cabecalho nav ul li .a {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 33px;
+  color: #bdd1de;
+}
+.cabecalho nav ul li .a:hover {
+  color: #8ab3cf;
+}/*# sourceMappingURL=cabecalho.css.map */

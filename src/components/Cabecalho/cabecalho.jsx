@@ -10,7 +10,7 @@ export default function Cabecalho() {
     <header className='cabecalho'>
         <Link href="/">
 
-        <Image src= "/image/logo.png" 
+        <Image src= "/image/logoJarvis.png" 
             width={220}
             height={220}
             alt ="Imagem da logo da porto seguro"
