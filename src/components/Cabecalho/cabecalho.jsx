@@ -1,11 +1,21 @@
+"use client"
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import "./cabecalho.scss"
+import { useState} from 'react'
 
 
 export default function Cabecalho() {
-  return (
+    const [ativo, setAtivo] = useState(false);
+
+    const handleClick = () => {
+      const nav = document.querySelector('.nav');
+      setAtivo(!ativo);
+      nav.classList.toggle('active');
+    };
+  
+    return (
    <>
     <header className='cabecalho'>
         <Link href="/">
@@ -18,7 +28,9 @@ export default function Cabecalho() {
             />
           </Link>
 
-          <nav>
+          <nav >
+           <button className='burger' onClick={handleClick}></button>
+
             <ul>
                 <li>
                 <Link href="/" className='a'>Login</Link>
@@ -34,6 +46,7 @@ export default function Cabecalho() {
                 </li>
               
             </ul>
+           
           </nav>
 
         

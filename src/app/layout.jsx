@@ -1,4 +1,5 @@
 import { Inter } from 'next/font/google'
+import "./css/main.scss"
 
 import Cabecalho from '@/components/Cabecalho/Cabecalho'
 
