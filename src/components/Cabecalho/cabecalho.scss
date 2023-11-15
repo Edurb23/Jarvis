@@ -1,5 +1,6 @@
 @import '../../app/css/main.scss';
 @import '../../app/css/cores';
+@import '../../app/css/fonte';
 
 .cabecalho{
     display: flex;
@@ -42,6 +43,7 @@
                 .a{
                     text-decoration: none;
                     font-weight: 600;
+                    font-family: $header-font;
                     font-size: 30px;
                     line-height: 33px;
                     color: $text-color;
@@ -52,26 +54,28 @@
                 }
             }
             @media screen and (max-width: 940px){
-               position: fixed;
-               top: 0;
-               left: 0;
-               width: 100vw;
-               height: 100vw;
-               background: $cor-principal;
-               clip-path: circle(100px at 90% -15%);
-               transition: 1s ease-out;
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100vw;
+                    height: 100vh;
+                    background: $cor-principal;
+                    clip-path: circle(100px at 90% -15%);
+                    transition: 1s ease-out;
 
-               flex-direction: column;
-               justify-content: space-around;
-               align-items: center;
-               gap: 0;
-               pointer-events: none;
-            }
-            .nav.active{
-                clip: circle(1500px at 90% -15%);
-                pointer-events: all;
-            }
+                    flex-direction: column;
+                    justify-content: space-around;
+                    align-items: center;
+                    gap: 0;
+                    pointer-events: none;
 
+                    &.active{
+                        clip-path: circle(100px at 90% -15%);
+                        pointer-events: all;
+                    }
+
+            }
+            
         
         }
         

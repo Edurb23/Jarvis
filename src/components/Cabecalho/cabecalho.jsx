@@ -1,19 +1,19 @@
 "use client"
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import "./cabecalho.scss"
-import { useState} from 'react'
+
 
 
 export default function Cabecalho() {
-    const [ativo, setAtivo] = useState(false);
+   
+  const [active, setActive] = useState(false)
+    
 
-    const handleClick = () => {
-      const nav = document.querySelector('.nav');
-      setAtivo(!ativo);
-      nav.classList.toggle('active');
-    };
+  const toggleActive = () => {
+    setActive(!active)
+  }
   
     return (
    <>
@@ -28,21 +28,21 @@ export default function Cabecalho() {
             />
           </Link>
 
-          <nav >
-           <button className='burger' onClick={handleClick}></button>
+          <nav className={`nav ${active ? 'active' : ''}`}>
+           <button className='burger' onClick={toggleActive} ></button>
 
-            <ul>
+            <ul >
                 <li>
-                <Link href="/" className='a'>Login</Link>
+                <Link href="/login" className='a'>Login</Link>
                 </li>
                 <li>
-                <Link href="/" className='a'>Tratamento</Link>
+                <Link href="/tratamento" className='a'>Tratamento</Link>
                 </li>
                 <li>
-                <Link href="/" className='a'>Exames</Link>
+                <Link href="/exames" className='a'>Exames</Link>
                 </li>
                 <li>
-                <Link href="/" className='a'>Medicamentos</Link>
+                <Link href="/medicamentos" className='a'>Medicamentos</Link>
                 </li>
               
             </ul>
