@@ -1,14 +1,15 @@
 import Conteudo from "@/components/Conteudo/conteudo"
 import Image from 'next/image'
+import './home.scss'
 
 export default function Home() {
   return (
   <>
     <section className="banner">
         <Image
-        src= "/image/banner-jarvis.png" 
-        width={100}
-        height={100}
+        src= "/image/banner-exame.png" 
+        width={500}
+        height={600}
         alt ="banner"
         className='bannerImage'
         />
