@@ -2,10 +2,15 @@ import React from 'react'
 
 export default function conteudo() {
   return (
-    <div>
-        <h1>PAGINA HOME</h1>
-        <p>BEM VINDO</p>
-        <p>teste </p>
+    <>
+    
+    <div className='titulo'>
+        <h4 className='titulo-home'>
+          Voce pode se interessar
+        </h4>
     </div>
+
+    
+    </>
   )
 }
