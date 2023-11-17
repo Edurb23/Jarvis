@@ -1,0 +1,10 @@
+@import './css/main.scss';
+@import './css/cores';
+@import './css/fonte';
+
+.bannerImage{
+    width: 100%;
+    @media screen and (max-width: 425px){
+        display: none;
+    }
+}
