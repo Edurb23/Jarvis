@@ -9,8 +9,8 @@ export default function Home() {
     <section className="banner">
         <Image
         src= "/image/banner-jarvis.png" 
-        width={200}
-        height={400}
+        width={1000}
+        height={600}
         alt ="banner"
         className='bannerImage'
         />
