@@ -1,14 +1,15 @@
 import React from 'react'
 import Link from 'next/link'
+import './editarConta.scss'
 
 export default function EditarConta() {
   return (
     <>
-     <div className='fundo-conta'>
-      <div className='caixa-conta' >
+     <div className='fundo-editar'>
+      <div className='caixa-editar' >
         <div>
 
-          <div className='titulo-conta'>
+          <div className='titulo-editar'>
             <h1>EDITAR CONTA</h1>
            
 
@@ -53,7 +54,7 @@ export default function EditarConta() {
               <input type="password" name='senha' id='idSenha' required />
             </div>
             <button className='botaoEditar'><Link className='link-editar'  href="/" >Editar</Link></button>
-            <button className='botaoExcluir'><Link className='link-excluir'  href="/" >Excluir Conta</Link></button>
+            <button className='botaoEditar'><Link className='link-editar'  href="/" >Voltar</Link></button>
           </form>
         </div>
       </div>
