@@ -2,9 +2,7 @@
 @import './css/cores';
 @import './css/fonte';
 
-.bannerImage{
+.banner{
     width: 100%;
-    @media screen and (max-width: 425px){
-        display: none;
-    }
+    background-image: url("/public/image/banner-exame.png");
 }
