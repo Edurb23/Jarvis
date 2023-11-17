@@ -16,15 +16,15 @@ export default function conteudo() {
       <div className='card-caixa'>
         <div >
         <Image src= "/image/banner-exame.png" 
-            width={220}
+            width={250}
             height={220}
             alt ="Imagem da logo da porto seguro"
             className='card-image'
             />
              <div className='card-text'>
-              <Link href="/exame" className='link'> 
+              <Link href="/exames" className='link'> 
                   <h4 className='cards-titulo' > Orientação de Exames</h4>
-                  <p className='card-texto'>Saiba oque fazer antes e depois dos seus exames</p>
+                  <p className='card-texto'>Saiba oque fazer antes e depois dos seus exames e cirugias</p>
                   <p>leia mais...</p>
               </Link>
               </div>
@@ -32,14 +32,14 @@ export default function conteudo() {
       </div>
       <div className='card-caixa'>
       <div className='card-image'>
-      <Image src= "/image/banner-exame.png" 
-            width={220}
+      <Image src= "/image/banner-medicamento.png" 
+            width={250}
             height={220}
             alt ="Imagem da logo da porto seguro"
             className='card-image'
             />
              <div className='card-text'>
-              <Link href="/exame" className='link'> 
+              <Link href="/medicamentos" className='link'> 
                   <h4 className='cards-titulo' >  Seus medicamentos</h4>
                   <p className='card-texto'>Voce sabe o que voce pode fazer tomando o seu medicamento?</p>
                   <p>leia mais...</p>

@@ -15,8 +15,10 @@
 }
 
 .cards{
-    margin-right: -15px;
-    margin-left: -15px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5%;
+ 
     .card-caixa{
         position: relative;
         min-height: 1px;
@@ -24,13 +26,11 @@
         padding-left: 15px;
         .card-image{
             border-radius: 10px 10px 0px 0px;
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
+            margin-bottom: -2px;
            
         }
         .card-text{
-             width: 170px;
+             width: 200px;
             border-radius: 0px 0px 10px 10px;
             padding: 25px;
             text-align: left;
@@ -51,8 +51,14 @@
 
             }
           
-                
+          
             
         }
+    }
+    @media screen and (max-width: 940px){
+        display: block;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
     }
 }
