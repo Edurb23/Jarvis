@@ -92,8 +92,8 @@ export default function conteudo() {
       <div className='cards-clientes'>
       <div >
       <Image src= "/image/cliente1.jpg" 
-            width={250}
-            height={220}
+            width={200}
+            height={200}
             alt ="Imagem de um cliente"
             className='card-image'
             
