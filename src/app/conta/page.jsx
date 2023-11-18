@@ -53,7 +53,7 @@ export default function Conta() {
               <label for="idSenha">Senha</label>
               <input type="password" name='senha' id='idSenha'  />
             </div>
-            <button className='botaoEditar'><Link className='link-editar'  href="/" >Editar</Link></button>
+            <button className='botaoEditar'><Link className='link-editar'  href="/editar" >Editar</Link></button>
             <button className='botaoExcluir'><Link className='link-excluir'  href="/" >Excluir Conta</Link></button>
           </form>
         </div>
