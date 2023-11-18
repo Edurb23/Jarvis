@@ -34,7 +34,7 @@
             border-radius: 0px 0px 10px 10px;
             padding: 25px;
             text-align: left;
-            box-shadow: 0px 3px 6px 0px #e4ebf0;
+            box-shadow: 0px 3px 6px 0px $cor-fundo;
             .link{
                 text-decoration: none;
                 .cards-titulo{
@@ -83,7 +83,7 @@
     margin: 48px 0px 30px 0px;
     text-align: justify;
     p{
-        background-color: #e4ebf0;
+        background-color:$cor-fundo;
         color: #333;
        padding: 20px;
     }
@@ -113,7 +113,7 @@
       div {
         background-color: #fff;
         border-radius: 8px;
-        box-shadow: 0 0 10px #e4ebf0;
+        box-shadow: 0 0 10px $cor-fundo;
         margin: 10px;
         padding: 20px;
         text-align: center;

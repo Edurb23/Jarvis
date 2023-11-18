@@ -9,7 +9,7 @@
         align-items: center;
         width: 100%;
         padding: 15px;
-        background-color: #e4ebf0;
+        background-color: $cor-fundo;
 
         div{
             border-radius: 4px;
@@ -184,7 +184,7 @@
                 white-space: nowrap;
                 background: $cor-principal;
                 border-color: transparent;
-                color: #e4ebf0;
+                color: $cor-fundo;
                 opacity: 1;
                 margin: 0.75rem 0;
                 width: 100%;
