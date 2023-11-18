@@ -35,9 +35,7 @@ export default function Cabecalho() {
                 <li>
                 <Link href="/login" className='a'>Login</Link>
                 </li>
-                <li>
-                <Link href="/tratamento" className='a'>Tratamento</Link>
-                </li>
+               
                 <li>
                 <Link href="/exames" className='a'>Exames</Link>
                 </li>

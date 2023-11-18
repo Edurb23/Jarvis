@@ -1,0 +1,160 @@
+@import '../../app/css/main.scss';
+@import '../../app/css/cores';
+@import '../../app/css/fonte';
+
+.titulo{
+    margin: 48px 0px 30px 0px;
+    text-align: center;
+    .titulo-home{
+        font-size: 28px;
+        margin: 20px 0px 20px 0px;
+        color: $cor-principal;
+        font-family: $principal-font;
+    }
+
+}
+
+.cards{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5%;
+ 
+    .card-caixa{
+        position: relative;
+        min-height: 1px;
+        padding-right: 15px;
+        padding-left: 15px;
+        .card-image{
+            border-radius: 10px 10px 0px 0px;
+            margin-bottom: -2px;
+           
+        }
+        .card-text{
+             width: 200px;
+            border-radius: 0px 0px 10px 10px;
+            padding: 25px;
+            text-align: left;
+            box-shadow: 0px 3px 6px 0px $cor-fundo;
+            .link{
+                text-decoration: none;
+                .cards-titulo{
+                    color: $text-color;
+                    font-family: $principal-font;
+                    font-size: 26px;
+                    text-decoration: none;
+                }
+                .card-texto{
+                    color: #000;
+                    font-size: 20px;
+                    margin: 0 0 10px;
+                }
+
+            }
+          
+          
+            
+        }
+    }
+    @media screen and (max-width: 940px){
+        display: block;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        margin-left: 30%;
+        .card-caixa{
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.conteudo{
+    
+.titulo-conteudo{
+    margin: 48px 0px 30px 0px;
+    text-align: center;
+    h4{
+        font-size: 28px;
+        margin: 20px 0px 20px 0px;
+        color: $cor-principal;
+        font-family: $principal-font;
+    }
+}
+.texto-conteudo{
+    margin: 48px 0px 30px 0px;
+    text-align: justify;
+    p{
+        background-color:$cor-fundo;
+        color: #333;
+       padding: 20px;
+    }
+}
+
+}
+.clientes-titulo{
+    margin: 48px 0px 30px 0px;
+    text-align: center;
+    h4{
+        font-size: 28px;
+        margin: 20px 0px 20px 0px;
+        color: $cor-principal;
+        font-family: $principal-font;
+    }
+}
+
+.clientes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  
+    .cards-clientes {
+      display: flex;
+  
+      div {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px $cor-fundo;
+        margin: 10px;
+        padding: 20px;
+        text-align: center;
+        width: 300px;
+        max-width: 300px;
+  
+        .card-image {
+            border-radius: 50%;  
+            margin-bottom: 10px;
+        }
+  
+        p {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin-bottom: 10px;
+  
+          .card-image {
+            margin-right: 10px;
+          }
+        }
+  
+        strong {
+          display: block;
+          font-weight: bold;
+          margin-top: 10px;
+          color: $text-color;
+        }
+      }
+      @media (max-width: 940px) {
+        
+        flex-wrap: wrap;
+        div {
+            
+            
+          }
+  
+        
+      }
+    }
+  
+  }
+  
+  
