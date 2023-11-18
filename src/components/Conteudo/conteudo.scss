@@ -34,7 +34,7 @@
             border-radius: 0px 0px 10px 10px;
             padding: 25px;
             text-align: left;
-            box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.3);
+            box-shadow: 0px 3px 6px 0px #e4ebf0;
             .link{
                 text-decoration: none;
                 .cards-titulo{
@@ -105,7 +105,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    
   
     .cards-clientes {
       display: flex;
@@ -113,15 +113,16 @@
       div {
         background-color: #fff;
         border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 0 10px #e4ebf0;
         margin: 10px;
-        height: 48vh;
+        padding: 20px;
         text-align: center;
+        width: 300px;
         max-width: 300px;
   
         .card-image {
-          border-radius: 8px;
-          margin-bottom: 10px;
+            border-radius: 50%;  
+            margin-bottom: 10px;
         }
   
         p {
@@ -130,16 +131,30 @@
           align-items: center;
           margin-bottom: 10px;
   
-         
+          .card-image {
+            margin-right: 10px;
+          }
         }
   
         strong {
           display: block;
           font-weight: bold;
           margin-top: 10px;
+          color: $text-color;
         }
       }
+      @media (max-width: 940px) {
+        
+        flex-wrap: wrap;
+        div {
+            
+            
+          }
+  
+        
+      }
     }
+  
   }
   
   

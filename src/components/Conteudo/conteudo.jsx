@@ -90,7 +90,7 @@ export default function conteudo() {
 
     <div className='clientes'>
       <div className='cards-clientes'>
-      <div className='cliente1'>
+      <div >
       <Image src= "/image/cliente1.jpg" 
             width={250}
             height={220}
@@ -99,14 +99,14 @@ export default function conteudo() {
             
             />
         <p>
-            gosto muito de usar aqui
+        "Experiência incrível! A SurgeryCare demonstrou profissionalismo e compromisso. Estou extremamente satisfeito com o serviço prestado. Parabéns!
             <br />
-              <strong>ana silva</strong>
+              <strong>Ana Silva</strong>
           </p>
 
       </div>
-      <div className='cliente1'>
-      <Image src= "/image/cliente1.jpg" 
+      <div >
+      <Image src= "/image/cliente2.jpg" 
             width={250}
             height={220}
             alt ="Imagem de um cliente"
@@ -114,14 +114,14 @@ export default function conteudo() {
             
             />
         <p>
-            gosto muito de usar aqui
+        "Serviço de alta qualidade! A SurgeryCare entendeu minhas necessidades e entregou além do esperado. Equipe competente e atenciosa. Recomendo de olhos fechados! 
             <br />
-              <strong>ana silva</strong>
+              <strong>Fernanda Lima</strong>
           </p>
 
       </div>
-      <div className='cliente1'>
-      <Image src= "/image/cliente1.jpg" 
+      <div >
+      <Image src= "/image/cliente3.jpg" 
             width={250}
             height={220}
             alt ="Imagem de um cliente"
@@ -129,15 +129,31 @@ export default function conteudo() {
             
             />
         <p>
-            gosto muito de usar aqui
+        "Impressionado com a eficiência da SurgeryCare. Desde o atendimento até o resultado final, tudo foi excepcional. Cliente satisfeito e fiel! Continuem com o excelente trabalho! 
             <br />
-              <strong>ana silva</strong>
+              <strong>Cássio Ramos</strong>
+          </p>
+
+      </div>
+      <div >
+      <Image src= "/image/cliente4.jpg" 
+            width={250}
+            height={220}
+            alt ="Imagem de um cliente"
+            className='card-image'
+            
+            />
+        <p>
+        Gratidão pelo excelente serviço! A SurgeryCare superou minhas expectativas. Atendimento impecável, equipe dedicada e resultados surpreendentes. Recomendo a todos!
+            <br />
+              <strong>Gabriel Santos</strong>
           </p>
 
       </div>
       
         
       </div>
+      
     </div>
     
     </>
