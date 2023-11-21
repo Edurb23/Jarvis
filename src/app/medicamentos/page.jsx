@@ -45,7 +45,7 @@ export default function Medicamentos() {
               className='card-image'
             />
             <div className='card-text'>
-              <Link href="/paracetamol" className='link'>
+              <Link href="medicamentos/remedios/paracetamol" className='link'>
                 <h4 className='cards-titulo' > Paracetamol</h4>
 
                 <p className='saiba-mais'>saiba mais...</p>
@@ -62,7 +62,7 @@ export default function Medicamentos() {
               className='card-image'
             />
             <div className='card-text'>
-              <Link href="/dipirona" className='link'>
+              <Link href="medicamentos/remedios/dipirona" className='link'>
                 <h4 className='cards-titulo' >Dipirona</h4>
                 <p className='saiba-mais'>saiba mais...</p>
               </Link>
@@ -79,7 +79,7 @@ export default function Medicamentos() {
               className='card-image'
             />
             <div className='card-text'>
-              <Link href="/lorsartana" className='link'>
+              <Link href="medicamentos/remedios/lorsartana" className='link'>
                 <h4 className='cards-titulo' >Lorsartana</h4>
                 <p className='saiba-mais'>saiba mais...</p>
               </Link>
@@ -92,12 +92,12 @@ export default function Medicamentos() {
 
       <ListaMedicamentos />
 
-      <div className='conteudo' >
-        <div className='titulo-conteudo'>
+      <div className='conteudo-medicamento' >
+        <div className='titulo-conteudo-medicamento'>
           <h4>
             Consequências de Uso Incorreto de Medicamentos: Cuidado e Consciência são Essenciais</h4>
         </div>
-        <div className='texto-conteudo'>
+        <div className='texto-conteudo-medicamento'>
           <p>O uso inadequado de medicamentos é uma prática que, infelizmente, pode resultar em sérias consequências para a saúde. Quando as pessoas desviam das orientações médicas, seja por automedicação irresponsável ou pela não adesão correta à prescrição, estão inadvertidamente arriscando sua própria saúde.
 
             Os erros no uso de medicamentos podem se manifestar de diversas maneiras, desde a dosagem inadequada até a interação prejudicial com outros medicamentos. A negligência nesse aspecto pode comprometer a eficácia do tratamento, agravar condições médicas e, em casos extremos, levar a complicações graves.

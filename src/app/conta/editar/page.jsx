@@ -54,7 +54,7 @@ export default function EditarConta() {
               <input type="password" name='senha' id='idSenha' />
             </div>
             <button className='botaoEditar'><Link className='link-editar'  href="/" >Editar</Link></button>
-            <button className='botaoEditar'><Link className='link-editar'  href="/" >Voltar</Link></button>
+            <button className='botaoEditar'><Link className='link-editar'  href="/conta" >Voltar</Link></button>
           </form>
         </div>
       </div>

@@ -13,10 +13,6 @@
         font-family: $principal-font;
     }
     
-
-
-
-   
 }
 
 .titulo-medicamentos{
@@ -86,6 +82,29 @@
         margin-left: 30%;
         .card-caixa{
             margin-bottom: 20px;
+        }
+    }
+}
+
+.conteudo-medicamento{
+    
+    .titulo-conteudo-medicamento{
+        margin: 48px 0px 30px 0px;
+        text-align: center;
+        h4{
+            font-size: 28px;
+            margin: 20px 0px 20px 0px;
+            color: $cor-principal;
+            font-family: $principal-font;
+        }
+    }
+    .texto-conteudo-medicamento{
+        margin: 48px 0px 30px 0px;
+        text-align: justify;
+        p{
+            background-color:$cor-fundo;
+            color: #333;
+           padding: 20px;
         }
     }
 }
