@@ -26,7 +26,7 @@ export default function ListaMedicamentos() {
                         <Link href="/" className='a'>Sulfato Ferroso</Link>
                     </li>
                     <li>
-                        <Link href="/" className='a'>Atenolol</Link>
+                        <Link href="/">Atenolol</Link>
                     </li>
 
                 </ul>
