@@ -15,10 +15,12 @@
             font-size: 30px;
             list-style: none;
             
+            
             a{
                 text-decoration: none;
+                color: $text-color;
                 &:hover{
-                    color: $text-hover;
+                    color: $cor-principal
                 }
             }
            

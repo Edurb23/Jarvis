@@ -45,7 +45,7 @@ export default function Medicamentos() {
               className='card-image'
             />
             <div className='card-text'>
-              <Link href="/" className='link'>
+              <Link href="/paracetamol" className='link'>
                 <h4 className='cards-titulo' > Paracetamol</h4>
 
                 <p className='saiba-mais'>saiba mais...</p>
@@ -62,7 +62,7 @@ export default function Medicamentos() {
               className='card-image'
             />
             <div className='card-text'>
-              <Link href="/" className='link'>
+              <Link href="/dipirona" className='link'>
                 <h4 className='cards-titulo' >Dipirona</h4>
                 <p className='saiba-mais'>saiba mais...</p>
               </Link>
@@ -79,7 +79,7 @@ export default function Medicamentos() {
               className='card-image'
             />
             <div className='card-text'>
-              <Link href="/" className='link'>
+              <Link href="/lorsartana" className='link'>
                 <h4 className='cards-titulo' >Lorsartana</h4>
                 <p className='saiba-mais'>saiba mais...</p>
               </Link>
