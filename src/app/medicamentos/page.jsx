@@ -2,6 +2,7 @@ import React from 'react'
 import './medicamentos.scss'
 import Image from 'next/image'
 import Link from 'next/link'
+import ListaMedicamentos from '@/components/ListaMedicamentos/listaMedicamentos'
 
 export default function Medicamentos() {
   return (
@@ -88,6 +89,8 @@ export default function Medicamentos() {
       </div>
      
     </div>
+
+    <ListaMedicamentos/>
 
     
    </>
