@@ -23,7 +23,7 @@ export default function Omeprazol() {
         </div>
         <div className='texto-conteudo-omeprazol'>
           <p>
-            É um beta-bloqueador usado principalmente no tratamento da hipertensão -arterial e em certos distúrbios cardíacos. Ele atua reduzindo a frequência cardíaca e a pressão arterial, ajudando a controlar a hipertensão e a diminuir a carga de trabalho do coração.
+          Omeprazol é um medicamento classificado como inibidor da bomba de prótons, utilizado no tratamento de condições gastrointestinais. Ele atua diminuindo a produção de ácido no estômago, sendo eficaz no tratamento de úlceras, refluxo gastroesofágico e condições relacionadas ao excesso de ácido gástrico. A dosagem é prescrita pelo médico e geralmente é tomada antes das refeições. Este medicamento pode interagir com outros fármacos, e em alguns casos, pode apresentar efeitos colaterais, como dores de cabeça, náuseas ou diarreia. Portanto, seu uso deve ser acompanhado por um profissional de saúde para garantir a segurança e eficácia do tratamento.
           </p>
 
         </div>
@@ -53,17 +53,16 @@ export default function Omeprazol() {
 
       <section className='faq'>
         <details>
-          <summary>Porque o atenolol diminui a frequência cardíaca?</summary>
-          <p>O Atenololol pertence a uma classe de medicamentos chamada β-bloqueadores. Funciona relaxando os vasos sanguíneos e diminuindo a frequência cardíaca para melhorar o fluxo sanguíneo e baixar a pressão arterial.</p>
+          <summary>Quanto custa o Omeprazol?</summary>
+          <p>O valor do medicamento pode variar entre R$15 até R$20 de acordo com a farmácia e a quantidade de comprimidos adquiridos.</p>
         </details>
         <details>
-          <summary>Qual efeito esperado ao tratar um paciente com atenolol?</summary>
-          <p>Qual efeito esperado ao tratar um paciente com atenolol?
-            O atenolol pode agravar os distúrbios da circulação arterial periférica, reduzindo a circulação, principalmente nos pacientes que sofrem de síndrome de Raynaud e outras doenças vasculares periféricas.</p>
+          <summary>Omeprazol serve para dor de estômago?</summary>
+          <p>Sim, serve para a dores de estômago por reduzir o ácido estomacal.</p>
         </details>
         <details>
-          <summary>Quem toma atenolol urina muito?</summary>
-          <p>A clortalidona aumenta a quantidade de urina produzida pelos rins. O efeito deste medicamento é mantido por no mínimo 24 horas após dose oral única diária</p>
+          <summary>Como tomar Omeprazol?</summary>
+         <p>A indicação é que seja consumido um Omeprazol ao dia pelo tempo máximo de 4 semanas. Existem casos específicos que esse período pode ser estendido por mais 4 semanas.</p>
         </details>
       </section>
 
