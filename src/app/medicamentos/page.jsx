@@ -1,9 +1,15 @@
 import React from 'react'
+import './medicamentos.scss'
 
 export default function Medicamentos() {
   return (
-    <div><h1>
-        PAGINA MEDICAMMNETOS
-        </h1></div>
+   <>
+   <div className='titulo'> 
+    
+   <h1 className='titulo-principal'> Medicamentos</h1>
+
+   <h2 className='subtitulo'>Remedios que voce procura</h2>
+   </div>
+   </>
   )
 }

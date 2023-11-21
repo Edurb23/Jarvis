@@ -1,0 +1,22 @@
+@import '../../app/css/main.scss';
+@import '../../app/css/cores';
+@import '../../app/css/fonte';
+
+
+.titulo{
+    margin: 48px 0px 30px 0px;
+    text-align: center;
+    .titulo-principal{
+        font-size: 60px;
+        margin: 20px 0px 20px 0px;
+        color: $cor-principal;
+        font-family: $principal-font;
+    }
+    .subtitulo{
+        font-size: 28px;
+        margin: 20px 0px 20px 0px;
+        color: $cor-principal;
+        font-family: $principal-font;
+    }
+   
+}
