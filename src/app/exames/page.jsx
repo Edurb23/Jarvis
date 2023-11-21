@@ -5,7 +5,7 @@ export default function Exames() {
     <div>
 
         <h1>
-            PAGINA DE EXAMES
+            PAGINA DE EXAMES 1
         </h1>
     </div>
   )
