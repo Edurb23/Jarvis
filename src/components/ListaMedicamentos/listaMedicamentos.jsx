@@ -17,7 +17,7 @@ export default function ListaMedicamentos() {
                         <Link href="/medicamentos/remedios/dipirona" className='a'>Dipirona</Link>
                     </li>
                     <li>
-                        <Link href="/medicamentos/remedios/losartana" className='a'>Losartana</Link>
+                        <Link href="/medicamentos/remedios/losartan" className='a'>Losartana</Link>
                     </li>
                     <li>
                         <Link href="/medicamentos/remedios/omeprazol" className='a' >Omeprazol</Link>
