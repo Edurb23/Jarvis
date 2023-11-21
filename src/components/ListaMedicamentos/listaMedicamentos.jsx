@@ -26,7 +26,7 @@ export default function ListaMedicamentos() {
                         <Link href="/medicamentos/remedios/paracetamol" className='a'>Paracetamol</Link>
                     </li>
                     <li>
-                        <Link href="/medicamentos/remedios/sufato-ferroso" className='a'>Sulfato Ferroso</Link>
+                        <Link href="/medicamentos/remedios/sulfato-ferroso" className='a'>Sulfato Ferroso</Link>
                     </li>
 
                 </ul>

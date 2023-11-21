@@ -79,7 +79,7 @@ export default function Medicamentos() {
               className='card-image'
             />
             <div className='card-text'>
-              <Link href="medicamentos/remedios/lorsartana" className='link'>
+              <Link href="medicamentos/remedios/losartan" className='link'>
                 <h4 className='cards-titulo' >Lorsartana</h4>
                 <p className='saiba-mais'>saiba mais...</p>
               </Link>
