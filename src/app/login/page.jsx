@@ -9,7 +9,7 @@ export default function Login() {
   const navigate = useRouter("");
 
   const [msgstatus, setMsgStatus] = useState("");
-  
+
 
   const [usuario, setUsuario] = useState({
     "info":"login",
@@ -37,6 +37,7 @@ export default function Login() {
         const user = await response.json();
 
         if(user){
+
           
           const token = Math.random().toString(36).substring(2) + Math.random().toString(36).substring(2);
 
@@ -44,6 +45,14 @@ export default function Login() {
           sessionStorage.setItem("token-user",token);
 
           
+
+        
+          const token = Math.random().toString(36).substring(2) + Math.random().toString(36).substring(2);
+
+         
+          sessionStorage.setItem("token-user",token);
+
+       
           process.env.NEXT_PUBLIC_TOKEN_USER = token;
 
 
