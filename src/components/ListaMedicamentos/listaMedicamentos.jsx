@@ -11,22 +11,22 @@ export default function ListaMedicamentos() {
 
                 <ul className='lista-medicamentos'>
                     <li>
-                        <Link href="medicamentos/remedios/atenolol">Atenolol</Link>
+                        <Link href="/medicamentos/remedios/atenolol">Atenolol</Link>
                     </li>
                     <li>
-                        <Link href="medicamentos/remedios/dipirona" className='a'>Dipirona</Link>
+                        <Link href="/medicamentos/remedios/dipirona" className='a'>Dipirona</Link>
                     </li>
                     <li>
-                        <Link href="medicamentos/remedios/losartana" className='a'>Losartan</Link>
+                        <Link href="/medicamentos/remedios/losartana" className='a'>Losartana</Link>
                     </li>
                     <li>
-                        <Link href="medicamentos/remedios/omeprazol" className='a' >Omeprazol</Link>
+                        <Link href="/medicamentos/remedios/omeprazol" className='a' >Omeprazol</Link>
                     </li>
                     <li>
-                        <Link href="medicamentos/remedios/paracetamol" className='a'>Paracetamol</Link>
+                        <Link href="/medicamentos/remedios/paracetamol" className='a'>Paracetamol</Link>
                     </li>
                     <li>
-                        <Link href="medicamentos/remedios/sufato-ferroso" className='a'>Sulfato Ferroso</Link>
+                        <Link href="/medicamentos/remedios/sufato-ferroso" className='a'>Sulfato Ferroso</Link>
                     </li>
 
                 </ul>

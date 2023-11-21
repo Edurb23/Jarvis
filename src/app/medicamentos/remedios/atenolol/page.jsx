@@ -2,6 +2,7 @@ import React from 'react'
 import "./atenolol.scss"
 import Image from 'next/image'
 import Link from 'next/link'
+import ListaMedicamentos from '@/components/ListaMedicamentos/listaMedicamentos'
 
 export default function Atenolol() {
   return (
@@ -42,6 +43,7 @@ export default function Atenolol() {
       <dir className= "link-compra">
       <Link className='a' href="https://www.drogariasaopaulo.com.br/atenolol-25mg-generico-medley-30-comprimidos/p" target='_blank' > Compre Agora</Link>
       </dir>
+
       
 
       <div className='faq-titulo'>
@@ -64,6 +66,7 @@ export default function Atenolol() {
         </details>
       </section>
 
+      <ListaMedicamentos/>
 
     </>
   )
