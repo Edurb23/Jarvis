@@ -9,7 +9,7 @@ export default function Login() {
   const navigate = useRouter("");
 
   const [msgstatus, setMsgStatus] = useState("");
-  // const [classLoginMsg, setclassLoginMsg] = useState("");
+
 
   const [usuario, setUsuario] = useState({
     "info":"login",
@@ -37,13 +37,22 @@ export default function Login() {
         const user = await response.json();
 
         if(user){
-          //Gerando o token do usuário:
+
+          
           const token = Math.random().toString(36).substring(2) + Math.random().toString(36).substring(2);
 
-          //Armazenar o token no sessionStorage:
+          
           sessionStorage.setItem("token-user",token);
 
-          //Armazenar o token em uma env variável no NEXTJS:
+          
+
+        
+          const token = Math.random().toString(36).substring(2) + Math.random().toString(36).substring(2);
+
+         
+          sessionStorage.setItem("token-user",token);
+
+       
           process.env.NEXT_PUBLIC_TOKEN_USER = token;
 
 
