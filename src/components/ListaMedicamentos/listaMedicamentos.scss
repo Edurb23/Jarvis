@@ -1,0 +1,29 @@
+@import '../../app/css/main.scss';
+@import '../../app/css/cores';
+@import '../../app/css/fonte';
+.lista{
+    margin-bottom: 5%;
+    
+  .lista-medicamentos{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+         background-color:$cor-fundo;
+         color: #333;
+         padding: 20px;
+         li{
+            font-size: 30px;
+            list-style: none;
+            
+            
+            a{
+                text-decoration: none;
+                color: $text-color;
+                &:hover{
+                    color: $cor-principal
+                }
+            }
+           
+         }
+        }
+}

@@ -1,0 +1,94 @@
+@import '../../../css/cores';
+@import '../../../css/fonte';
+@import '../../../css/main.scss';
+
+.titulo{
+    margin: 48px 0px 30px 0px;
+    text-align: center;
+    .titulo-principal{
+        font-size: 60px;
+        margin: 20px 0px 20px 0px;
+        color: $cor-principal;
+        font-family: $principal-font;
+    }
+    
+}
+
+.conteudo-dipirona{
+    
+    .titulo-dipirona{
+        margin: 48px 0px 30px 0px;
+        text-align: center;
+        h4{
+            font-size: 48px;
+            margin: 20px 0px 20px 0px;
+            color: $cor-principal;
+            font-family: $principal-font;
+        }
+    }
+    .texto-conteudo-dipirona{
+        margin: 48px 0px 30px 0px;
+        text-align: justify;
+        p{
+            background-color:$cor-fundo;
+            color: #333;
+           padding: 20px;
+           font-size: 30px;
+        }
+    }
+}
+
+.imagem-remedio{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2%;
+  
+}
+
+.link-compra{
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 5%;
+
+    .a{
+        text-decoration: none;
+        color: $text-color;
+        &:hover{
+            color: $cor-principal;
+        }
+    }
+}
+
+.faq-titulo{
+    margin: 48px 0px 30px 0px;
+    text-align: center;
+    h4{
+        font-size: 58px;
+        margin: 20px 0px 20px 0px;
+        color: $cor-principal;
+        font-family: $principal-font;
+    }
+}
+
+.faq{
+   text-align: center;
+   margin-bottom: 5%;
+   
+  
+   details{
+    summary{
+        background-color:$cor-fundo;
+        padding: 2%;
+        border-bottom: solid $text-hover;
+        font-size: 35px;
+        color:  $cor-principal;
+    }
+    p{
+        font-size: 25px;
+        padding: 2%;
+        text-align: justify;
+        background-color: $text-hover;
+        color: #fff
+    }
+}
+}
