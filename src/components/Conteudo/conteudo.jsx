@@ -57,7 +57,7 @@ export default function conteudo() {
             className='card-image'
             />
              <div className='card-text'>
-              <Link href="/exames" className='link'> 
+              <Link href="/exames/novembro-azul/prostata" className='link'> 
                   <h4 className='cards-titulo' > Novembro Azul</h4>
                   <p className='card-texto'> 
                   Previna-se! Novembro Azul: Cuide da sua saúde. Exames. Converse. Previna. Homens, vamos juntos pela conscientização
