@@ -52,7 +52,7 @@ export default function Exames() {
       className='card-image'
     />
     <div className='card-text'>
-      <Link href="#" className='link'>
+      <Link href="/exames/catarata" className='link'>
         <h4 className='cards-titulo' > Catarata</h4>
 
         <p className='saiba-mais'>saiba mais...</p>
@@ -69,7 +69,7 @@ export default function Exames() {
       className='card-image'
     />
     <div className='card-text'>
-      <Link href="#" className='link'>
+      <Link href="/exames/parto" className='link'>
         <h4 className='cards-titulo' >Parto Cesariano</h4>
         <p className='saiba-mais'>saiba mais...</p>
       </Link>
@@ -86,7 +86,7 @@ export default function Exames() {
       className='card-image'
     />
     <div className='card-text'>
-      <Link href="#" className='link'>
+      <Link href="/exames/hernia" className='link'>
         <h4 className='cards-titulo' >Hérnia</h4>
         <p className='saiba-mais'>saiba mais...</p>
       </Link>
@@ -103,7 +103,7 @@ export default function Exames() {
       className='card-image'
     />
     <div className='card-text'>
-      <Link href="#" className='link'>
+      <Link href="/vesicula-biliar" className='link'>
         <h4 className='cards-titulo' >Vesícula Biliar</h4>
         <p className='saiba-mais'>saiba mais...</p>
       </Link>
@@ -120,7 +120,7 @@ export default function Exames() {
       className='card-image'
     />
     <div className='card-text'>
-      <Link href="#" className='link'>
+      <Link href="/exame/artroplastia" className='link'>
         <h4 className='cards-titulo' >Artroplastia </h4>
         <p className='saiba-mais'>saiba mais...</p>
       </Link>
