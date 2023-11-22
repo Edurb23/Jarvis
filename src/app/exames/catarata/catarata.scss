@@ -1,0 +1,81 @@
+@import '../../css/cores';
+@import '../../css/fonte';
+@import '../../css/main.scss';
+
+
+.conteudo-catarata{
+    
+    .titulo-catarata{
+        margin: 48px 0px 30px 0px;
+        text-align: center;
+        h1{
+            font-size: 60px;
+            margin: 20px 0px 20px 0px;
+            color: $cor-principal;
+            font-family: $principal-font;
+        }
+        .bannerImage{
+            width: 80%;
+            box-shadow: 10px 6px 20px 0 #8b8b8ba6;
+            border-radius: 5px;
+            @media screen and (max-width: 425px){
+                display: none;
+            }
+        }
+    }
+    .subtitulo{
+        text-align: center;
+        font-size: 30px;
+        
+    }
+    .texto-conteudo-catarata{
+        margin: 48px 0px 30px 0px;
+        text-align: justify;
+
+        
+        p{
+            background-color:$cor-fundo;
+            color: #333;
+           padding: 20px;
+           font-size: 30px;
+           strong{
+            color: $cor-principal;
+           }
+        }
+    }
+}
+
+.faq-titulo{
+    margin: 48px 0px 30px 0px;
+    text-align: center;
+    h4{
+        font-size: 58px;
+        margin: 20px 0px 20px 0px;
+        color: $cor-principal;
+        font-family: $principal-font;
+    }
+}
+
+.faq{
+   text-align: center;
+   margin-bottom: 5%;
+   
+  
+   details{
+    summary{
+        background-color:$cor-fundo;
+        padding: 2%;
+        border-bottom: solid $text-hover;
+        font-size: 35px;
+        color:  $cor-principal;
+    }
+    p{
+        font-size: 25px;
+        padding: 2%;
+        text-align: justify;
+        background-color: $text-hover;
+        color: #fff
+    }
+}
+}
+
