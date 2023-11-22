@@ -131,6 +131,28 @@ export default function Exames() {
 
 </div>
 
+<div className='conteudo-exame2' >
+        <div className='titulo-conteudo-exame2'>
+          <h4>
+          Prevenção antes da cirurgia e Cuidados no pós-operatório</h4>
+        </div>
+        <div className='texto-conteudo-exame2'>
+          <p>O uso inadequado de medicamentos é uma prática que, infelizmente, pode resultar em sérias consequências para a saúde. Quando as pessoas desviam das orientações médicas, seja por automedicação irresponsável ou pela não adesão correta à prescrição, estão inadvertidamente arriscando sua própria saúde.
+
+            Os erros no uso de medicamentos podem se manifestar de diversas maneiras, desde a dosagem inadequada até a interação prejudicial com outros medicamentos. A negligência nesse aspecto pode comprometer a eficácia do tratamento, agravar condições médicas e, em casos extremos, levar a complicações graves.
+
+            Um dos perigos mais comuns está na automedicação, onde indivíduos buscam soluções rápidas para sintomas sem a devida orientação profissional. O que pode parecer inofensivo à primeira vista, muitas vezes, acaba sendo uma abordagem que mascara sintomas subjacentes, retardando um diagnóstico adequado.
+
+            A falta de adesão à prescrição médica é outra área crítica. Quando as pessoas param de tomar medicamentos antes do tempo recomendado, pulam doses ou ajustam as dosagens por conta própria, estão comprometendo a eficácia do tratamento e expondo-se a riscos desnecessários.
+
+            É fundamental reconhecer que cada medicamento é prescrito levando em consideração a condição específica de um paciente. O uso indevido pode não apenas comprometer a eficácia do tratamento, mas também aumentar a probabilidade de efeitos colaterais indesejados.
+
+            A conscientização sobre os perigos associados ao uso inadequado de medicamentos é crucial. Incentivar a consulta regular com profissionais de saúde, a compreensão das prescrições e a importância de seguir as orientações são passos essenciais para mitigar esses riscos. A saúde é um bem precioso, e o cuidado responsável com os medicamentos é um componente vital dessa jornada.</p>
+
+        </div>
+
+      </div>
+
 
     </>
   )
