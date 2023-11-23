@@ -65,6 +65,41 @@ export default function Conta({params}) {
     }
     obeterEmail()
   }, [email.id])
+
+
+  const handleClick = async (e) => {
+    e.preventDefault();
+    try {
+        const response = await fetch(`http://localhost:8080/api/paciente/${params.id}`,{
+            method:"DELETE",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            
+            body: JSON.stringify(cliente)
+        });
+        
+
+
+        if(response.status == 204){
+            setMsgStatus("Excluído com Sucesso!");
+            setTimeout(()=>{
+                setMsgStatus("");
+                router.push("/");
+            },5000);
+
+        }else{
+            setMsgStatus("Ocorreu um erro!");
+            setTimeout(()=>{
+                setMsgStatus("");
+            },5000);
+        }
+    }catch (error) {
+    }
+} 
+
+
+
    
 
   
@@ -86,48 +121,37 @@ export default function Conta({params}) {
           <form>
             <div className='nome'>
               <label for="idNome">Nome</label>
-              <div>
-                <span>{paciente.nm_paciente}</span>
-              </div>
+              <input type="text" name='nome' id='idNome' value={paciente.nm_paciente}/>
             </div>
             <div className='cpf'>
               <label for="idCpf">CPF</label>
-              <div>
-                <span>{paciente.nr_cpf}</span>
-              </div>
+              <input type="text" id="cpf" name="idCpf" value={paciente.nr_cpf}  />
             </div>
             <div className='rg'>
               <label for="idRg">RG</label>
-              <div>
-                <span>{paciente.nr_rg}</span>
-              </div>
+              <input type="text" id="rg" name="idRg" value={paciente.nr_rg}  />
             </div>
             <div className='sexoBiologico'>
               <label for="sexoBiologicoID">Sexo Biológico:</label>
-              <div>
-                <span>{paciente.fl_sexo_biologico}</span>
-              </div>
+              <select id="sexoBiologico" name="sexoBiologicoID"  >
+                <option value="masculino">{paciente.fl_sexo_biologico}</option>
+                
+              </select>
             </div>
             <div className='altura'>
               <label for="alturaID">Altura (cm):</label>
-              <div>
-                <span>{paciente.nr_altura}</span>
-              </div>
+              <input type="number" id="altura" name="alturaId" value={paciente.nr_altura} />
             </div>
             <div className='peso'>
               <label for="pesoID">Peso (kg):</label>
-              <div>
-                <span>{paciente.nr_peso}</span>
-              </div>
+              <input type="number" id="peso" name="peso" value={paciente.nr_peso} />
             </div>
             <div className='email'>
               <label for="emailID">Email:</label>
-              <div>
-                <span>{email.ds_email}</span>
-              </div>
+              <input type="email" name='email' id='idEmail' value={email.ds_email}  />
             </div>
             <button className='botaoEditar'><Link className='link-editar'  href="/conta/editar" >Editar</Link></button>
-            <button className='botaoExcluir'><Link className='link-excluir'  href="/" >Excluir Conta</Link></button>
+            <button className='botaoExcluir' onClick={handleClick}><Link className='link-excluir'  href="/" >Excluir Conta</Link></button>
           </form>
         </div>
       </div>

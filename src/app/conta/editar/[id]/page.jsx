@@ -54,6 +54,48 @@ useEffect( () => {
   setPaciente({...paciente,[name]:value})
 }
 
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  try {
+      const response = await fetch(`http://localhost:8080/api/paciente/${params.id}`,{
+          method:"PUT",
+          headers:{
+              "Content-Type":"application/json"
+          },
+          body: JSON.stringify(paciente)
+      });
+
+      if(response.ok){
+          const paciente = await response.json();
+
+          if(paciente){
+              setMsgStatus("Atualizado com Sucesso!");
+              setTimeout(()=>{
+                  setMsgStatus("");
+                  router.push(`/conta/${params.id}`);
+              },5000);
+          }else{
+              setMsgStatus("Ocorreu um erro!");
+              setTimeout(()=>{
+                  setMsgStatus("");
+                  setPaciente({
+                    "nm_paciente":"",
+                    "nr_cpf":"",
+                    "nr_rg":"",
+                    "fl_sexo_biologico": "",
+                    "nr_altura": "",
+                    "nr_peso": "",
+                    "dt_data_nascimento":"",
+                    "id_paciente": params.id
+                  });
+              },5000);
+          }
+      }
+  }catch (error) {
+  }
+} 
+
+
 const [email, setEmail] = useState({
   "ds_email": "",
   "st_email": "",
@@ -80,6 +122,13 @@ useEffect(() => {
   obeterEmail()
 }, [email.id])
 
+
+const handleChangeEmail = (e)=>{
+  const {name, value} = e.target;
+  setEmail({...email,[name]:value})
+}
+
+
   
   
   
@@ -94,40 +143,41 @@ useEffect(() => {
            
 
           </div>
-          <form>
+          <form onSubmit={handleSubmit}>
             <div className='nome'>
               <label for="idNome">Nome</label>
               <input type="text" name='nome' id='idNome' value={paciente.nm_paciente}  onChange={handleChange}/>
             </div>
             <div className='cpf'>
               <label for="idCpf">CPF</label>
-              <input type="text" id="cpf" name="idCpf" value={paciente.nr_cpf}  />
+              <input type="text" id="cpf" name="idCpf" value={paciente.nr_cpf} onChange={handleChange} />
             </div>
             <div className='rg'>
               <label for="idRg">RG</label>
-              <input type="text" id="rg" name="idRg" value={paciente.nr_rg}  />
+              <input type="text" id="rg" name="idRg" value={paciente.nr_rg} onChange={handleChange} />
             </div>
             <div className='sexoBiologico'>
               <label for="sexoBiologicoID">Sexo Biológico:</label>
-              <select id="sexoBiologico" name="sexoBiologicoID" value={paciente.fl_sexo_biologico}>
-                <option value="masculino">Masculino</option>
-                <option value="feminino">Feminino</option>
-                <option value="outro">Outro</option>
+              <select id="sexoBiologico" name="sexoBiologicoID" value={paciente.fl_sexo_biologico} onChange={handleChange}>
+                
+                <option value="masculino">M</option>
+                <option value="feminino">F</option>
+                <option value="outro">I</option>
               </select>
             </div>
             <div className='altura'>
               <label for="alturaID">Altura (cm):</label>
-              <input type="number" id="altura" name="alturaId" value={paciente.nr_altura} />
+              <input type="number" id="altura" name="alturaId" value={paciente.nr_altura} onChange={handleChange}/>
             </div>
             <div className='peso'>
               <label for="pesoID">Peso (kg):</label>
-              <input type="number" id="peso" name="peso" value={paciente.nr_peso}/>
+              <input type="number" id="peso" name="peso" value={paciente.nr_peso} onChange={handleChange}/>
             </div>
 
 
             <div className='email'>
               <label for="idEmail">Endereço de email</label>
-              <input type="email" name='email' id='idEmail' value={email.ds_email}  />
+              <input type="email" name='email' id='idEmail' value={email.ds_email} onChange={handleChange} />
             </div>
       
             <button className='botaoEditar'><Link className='link-editar'  href="/" >Editar</Link></button>
