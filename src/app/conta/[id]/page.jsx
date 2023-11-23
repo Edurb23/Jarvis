@@ -39,6 +39,32 @@ export default function Conta({params}) {
     };
     getPacientes();
    }, [params.id])
+
+   const [email, setEmail] = useState({
+    "ds_email": "",
+    "st_email": "",
+    "id_paciente": params.id,
+    "id_email": params.id
+  
+  })
+  
+  useEffect(() => {
+    const obeterEmail = async() => {
+      try{
+        const responseget = await fetch(`http://localhost:8080/api/emailpaciente/${params.id}`,{
+          method: "GET",
+          headers:{
+            "Content-Type":"application/json" 
+          }
+        });
+        let emailAtual = await responseget.json();
+        setEmail(emailAtual)
+      }catch(error){
+        console.log(error)
+      }
+    }
+    obeterEmail()
+  }, [email.id])
    
 
   
@@ -92,6 +118,12 @@ export default function Conta({params}) {
               <label for="pesoID">Peso (kg):</label>
               <div>
                 <span>{paciente.nr_peso}</span>
+              </div>
+            </div>
+            <div className='email'>
+              <label for="emailID">Email:</label>
+              <div>
+                <span>{email.ds_email}</span>
               </div>
             </div>
             <button className='botaoEditar'><Link className='link-editar'  href="/conta/editar" >Editar</Link></button>
