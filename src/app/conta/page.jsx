@@ -1,8 +1,49 @@
-import React from 'react'
+"use client";
+import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import './conta.scss'
 
-export default function Conta() {
+export default function Conta(params) {
+  
+   const router = setRouter();
+
+   const [paciente, setPaciente] = useState({
+    "nm_cliente":"",
+    "nr_cpf":"",
+    "nr_rg":"",
+    "fl_sexo_biologico": "",
+    "nr_altura": "",
+    "nr_peso": "",
+    "dt_data_nascimento":"",
+    "id_cliente": params.id
+   })
+
+
+   useEffect( () => {
+    const getPacientes = async () => {
+      try{
+       const responseget = await fetch(`http://localhost:8080/api/paciente/${params.id}`,{
+         method: "GET",
+         headers:{
+           "Content-Type": "application/json"
+         }
+       });
+       let paciente = await responseget.json();
+       setPaciente(paciente);
+      }catch(erro){
+       console.log(erro);
+       redirect("/error")
+      }
+    };
+    getPacientes();
+   }, [params.id])
+   
+
+  
+
+
+  
+  
   return (
    <>
     <div className='fundo-conta'>
