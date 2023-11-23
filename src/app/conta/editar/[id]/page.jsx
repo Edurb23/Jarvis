@@ -25,7 +25,7 @@ export default function EditarConta({params}) {
 
    useEffect(()=>{
     if (msgstatus)
-        alert(msgstatus)
+      alert(msgstatus)
 }, [msgstatus])
 
 useEffect( () => {
@@ -49,7 +49,7 @@ useEffect( () => {
 )
 
 
- const handleChange = (e)=>{
+const handleChange = (e)=>{
   const {name, value} = e.target;
   setPaciente({...paciente,[name]:value})
 }
@@ -67,6 +67,8 @@ const handleSubmit = async (e) => {
 
       if(response.ok){
           const paciente = await response.json();
+
+          console.log(paciente)
 
           if(paciente){
               setMsgStatus("Atualizado com Sucesso!");
@@ -146,20 +148,19 @@ const handleChangeEmail = (e)=>{
           <form onSubmit={handleSubmit}>
             <div className='nome'>
               <label for="idNome">Nome</label>
-              <input type="text" name='nome' id='idNome' value={paciente.nm_paciente}  onChange={handleChange}/>
+              <input type="text" name='nm_paciente' id='idNome' value={paciente.nm_paciente}  onChange={handleChange}/>
             </div>
             <div className='cpf'>
               <label for="idCpf">CPF</label>
-              <input type="text" id="cpf" name="idCpf" value={paciente.nr_cpf} onChange={handleChange} />
+              <input type="text" id="cpf" name="nr_cpf" value={paciente.nr_cpf} onChange={handleChange} />
             </div>
             <div className='rg'>
               <label for="idRg">RG</label>
-              <input type="text" id="rg" name="idRg" value={paciente.nr_rg} onChange={handleChange} />
+              <input type="text" id="rg" name="nr_rg" value={paciente.nr_rg} onChange={handleChange} />
             </div>
             <div className='sexoBiologico'>
               <label for="sexoBiologicoID">Sexo Biológico:</label>
-              <select id="sexoBiologico" name="sexoBiologicoID" value={paciente.fl_sexo_biologico} onChange={handleChange}>
-                
+              <select id="sexoBiologico" name="fl_sexo_biologico" value={paciente.fl_sexo_biologico} onChange={handleChange}>
                 <option value="masculino">M</option>
                 <option value="feminino">F</option>
                 <option value="outro">I</option>
@@ -167,17 +168,17 @@ const handleChangeEmail = (e)=>{
             </div>
             <div className='altura'>
               <label for="alturaID">Altura (cm):</label>
-              <input type="number" id="altura" name="alturaId" value={paciente.nr_altura} onChange={handleChange}/>
+              <input type="number" id="altura" name="nr_altura" value={paciente.nr_altura} onChange={handleChange}/>
             </div>
             <div className='peso'>
               <label for="pesoID">Peso (kg):</label>
-              <input type="number" id="peso" name="peso" value={paciente.nr_peso} onChange={handleChange}/>
+              <input type="number" id="peso" name="nr_peso" value={paciente.nr_peso} onChange={handleChange}/>
             </div>
 
 
             <div className='email'>
               <label for="idEmail">Endereço de email</label>
-              <input type="email" name='email' id='idEmail' value={email.ds_email} onChange={handleChange} />
+              <input type="email" name='email' id='ds_email' value={email.ds_email} onChange={handleChange} />
             </div>
       
             <button className='botaoEditar'><Link className='link-editar'  href="/" >Editar</Link></button>
