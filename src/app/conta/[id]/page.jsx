@@ -150,7 +150,7 @@ export default function Conta({params}) {
               <label for="emailID">Email:</label>
               <input type="email" name='email' id='idEmail' value={email.ds_email}  />
             </div>
-            <button className='botaoEditar'><Link className='link-editar'  href="/conta/editar" >Editar</Link></button>
+            <button className='botaoEditar'><Link className='link-editar'  href={`/conta/editar/${params.id}`} >Editar</Link></button>
             <button className='botaoExcluir' onClick={handleClick}><Link className='link-excluir'  href="/" >Excluir Conta</Link></button>
           </form>
         </div>
