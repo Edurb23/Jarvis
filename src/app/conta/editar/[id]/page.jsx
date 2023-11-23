@@ -1,8 +1,58 @@
+"use client";
+
+
 import React from 'react'
 import Link from 'next/link'
 import './editarConta.scss'
+import { useRouter } from 'next/router';
 
-export default function EditarConta() {
+export default function EditarConta({params}) {
+  
+  const id = String(params.id)
+
+  const router = useRouter();
+
+  const [msgstatus, setMsgStatus] = useState("");
+
+  const [paciente, setPaciente] = useState({
+    "nm_paciente":"",
+    "nr_cpf":"",
+    "nr_rg":"",
+    "fl_sexo_biologico": "",
+    "nr_altura": "",
+    "nr_peso": "",
+    "dt_data_nascimento":"",
+    "id_paciente": params.id
+   })
+
+   useEffect(()=>{
+    if (msgstatus)
+        alert(msgstatus)
+}, [msgstatus])
+
+useEffect( () => {
+  const getPacientes = async () => {
+    try{
+     const responseget = await fetch(`http://localhost:8080/api/paciente/${params.id}`,{
+       method: "GET",
+       headers:{
+         "Content-Type": "application/json"
+       }
+     });
+     let paciente = await responseget.json();
+     console.log(paciente)
+     setPaciente(paciente);
+    }catch(erro){
+     console.log(erro);
+    // redirect("/error")
+    }
+  };
+  getPacientes();
+ }, [params.id])
+
+  
+  
+  
   return (
     <>
      <div className='fundo-editar'>
