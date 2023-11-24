@@ -23,14 +23,14 @@ export default function Cadastro() {
 
   const [email, setEmail] = useState({
     "ds_email": "",
-    "st_email": "",
-    "id_paciente": params.id,
+    "st_email": "A",
+    "id_paciente": "",
     "id_email": ""
   })
 
   const [senha, setSenha] = useState({
     "id_cadastro": "",
-    "id_paciente": params.id,
+    "id_paciente": "",
     "id_email": "",
     "cd_senha": ""
   })
@@ -104,6 +104,7 @@ export default function Cadastro() {
           setMsgStatus("Ocorreu um erro!");
           setTimeout(() => {
             setMsgStatus("");
+
             setPaciente({
               "nm_paciente": "",
               "nr_cpf": "",
@@ -116,17 +117,18 @@ export default function Cadastro() {
 
             setEmail({
               "ds_email": "",
-              "st_email": "",
-              "id_paciente": params.id,
+              "st_email": "A",
+              "id_paciente": "",
               "id_email": ""
             });
-            
+
             setSenha({
               "id_cadastro": "",
-              "id_paciente": params.id,
+              "id_paciente": "",
               "id_email": "",
               "cd_senha": ""
             });
+
           }, 5000);
         }
       }
