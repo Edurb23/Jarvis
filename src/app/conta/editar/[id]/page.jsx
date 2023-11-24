@@ -168,8 +168,7 @@ export default function EditarConta({params}) {
               <label for="sexoBiologicoID">Sexo Biológico:</label>
               <select id="sexoBiologico" name="fl_sexo_biologico" value={paciente.fl_sexo_biologico} onChange={handleChange}>
                 <option value="M">M</option>
-                <option value="F">F</option>
-                <option value="I">I</option>
+                <option value="F">F</option>               
               </select>
             </div>
             <div className='altura'>

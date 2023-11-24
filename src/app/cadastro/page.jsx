@@ -167,8 +167,7 @@ export default function Cadastro({params}) {
               <select id="sexoBiologico" name="fl_sexo_biologico" required value={paciente.fl_sexo_biologico} onChange={handleChange}>
                 <option value="M">M</option>
                 <option value="F">F</option>
-                <option value="I">I</option>
-              </select>
+                 </select>
             </div>
             <div className='altura'>
               <label for="alturaID">Altura (cm):</label>
@@ -186,7 +185,7 @@ export default function Cadastro({params}) {
               <label for="idSenha">Senha</label>
               <input type="password" name='cd_senha' id='idSenha' required value={senha.cd_senha} onChange={handleChangeSenha} />
             </div>
-            <button className='botaoLogin'>CADASTRAR</button>
+            <Link href={`/conta/${params.id}`}><button className='botaoLogin'>CADASTRAR</button></Link>
           </form>
         </div>
       </div>
