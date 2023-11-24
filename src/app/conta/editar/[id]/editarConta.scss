@@ -1,10 +1,9 @@
-@import '../../app/css/main.scss';
-@import '../../app/css/cores';
-@import '../../app/css/fonte';
+@import '../../../css/main.scss';
+@import '../../../css/cores';
+@import '../../../css/fonte';
 
-
-.fundo-conta{
-    .caixa-conta{
+.fundo-editar{
+    .caixa-editar{
         display: flex;
         justify-content: center;
         align-items: center;
@@ -16,7 +15,7 @@
             background-color: #FFFFFF;
             padding: 1rem;
             box-shadow: 10px 6px 20px 0 #8b8b8ba6;
-            .titulo-conta{
+            .titulo-editar{
                 font-family: $principal-font;
                 font-size: 2rem;
                 font-weight: bold;
@@ -161,29 +160,7 @@
                     border: 1px solid $cor-principal;
                 }
             }
-            .botaoExcluir{
-                border: 0.125rem solid transparent;
-                cursor: pointer;
-                font-size: 1rem;
-                font-weight: bold;
-                height: 3rem;
-                line-height: 1.1rem;
-                white-space: nowrap;
-                background: $cor-principal;
-                border-color: transparent;
-                
-                opacity: 1;
-                margin: 0.75rem 0;
-                width: 100%;
-                &:hover{
-                    background: #ff0000;
-                    color: black;
-                }
-                .link-excluir{
-                    text-decoration: none;
-                    color: #e4ebf0;
-                }
-            }
+           
             .botaoEditar{
                 border: 0.125rem solid transparent;
                 cursor: pointer;
@@ -204,7 +181,7 @@
                 }
                 .link-editar{
                     text-decoration: none;
-                    color: #e4ebf0;
+                    color: $cor-fundo;
                 }
             }
         }

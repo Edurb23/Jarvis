@@ -60,7 +60,7 @@
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
-        margin-left: 30%;
+        margin-left: 35%;
         .card-caixa{
             margin-bottom: 20px;
         }
@@ -146,11 +146,8 @@
       @media (max-width: 940px) {
         
         flex-wrap: wrap;
-        div {
-            
-            
-          }
-  
+        margin-left: 10%;
+       
         
       }
     }

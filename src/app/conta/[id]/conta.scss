@@ -1,9 +1,10 @@
-@import '../../../app/css/main.scss';
-@import '../../../app/css/cores';
-@import '../../../app/css/fonte';
+@import '../../css/main.scss';
+@import '../../css/cores';
+@import '../../css/fonte';
 
-.fundo-editar{
-    .caixa-editar{
+
+.fundo-conta{
+    .caixa-conta{
         display: flex;
         justify-content: center;
         align-items: center;
@@ -15,7 +16,7 @@
             background-color: #FFFFFF;
             padding: 1rem;
             box-shadow: 10px 6px 20px 0 #8b8b8ba6;
-            .titulo-editar{
+            .titulo-conta{
                 font-family: $principal-font;
                 font-size: 2rem;
                 font-weight: bold;
@@ -30,6 +31,7 @@
                 flex-direction: column;
                 position: relative;
                 box-shadow: none;
+                
                 label{
                     padding-bottom: 2px;
                 }
@@ -160,7 +162,29 @@
                     border: 1px solid $cor-principal;
                 }
             }
-           
+            .botaoExcluir{
+                border: 0.125rem solid transparent;
+                cursor: pointer;
+                font-size: 1rem;
+                font-weight: bold;
+                height: 3rem;
+                line-height: 1.1rem;
+                white-space: nowrap;
+                background: $cor-principal;
+                border-color: transparent;
+                
+                opacity: 1;
+                margin: 0.75rem 0;
+                width: 100%;
+                &:hover{
+                    background: #ff0000;
+                    color: black;
+                }
+                .link-excluir{
+                    text-decoration: none;
+                    color: #e4ebf0;
+                }
+            }
             .botaoEditar{
                 border: 0.125rem solid transparent;
                 cursor: pointer;
@@ -181,7 +205,7 @@
                 }
                 .link-editar{
                     text-decoration: none;
-                    color: $cor-fundo;
+                    color: #e4ebf0;
                 }
             }
         }

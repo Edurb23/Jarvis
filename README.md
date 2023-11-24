@@ -1,3 +1,9 @@
+# INSTRUÇÕES PARA ENTRA NO PROJETO
+
+usar essas crendenciais para acessar a pagina da Conta do usuario e do editar usuario :
+- email: AnaSilva@gmail.com
+- senha: "8C*qZpWb"
+--------------------
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
