@@ -49,21 +49,21 @@ export default function Cadastro() {
 
   const handleChangeEmail = (e) => {
     const { name, value } = e.target;
-    setPaciente({ ...email, [name]: value })
+    setEmail({ ...email, [name]: value })
   }
 
 
   const handleChangeSenha = (e) => {
     const { name, value } = e.target;
-    setPaciente({ ...senha, [name]: value })
+    setSenha({ ...senha, [name]: value })
   }
-  
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-     
-      const response = await fetch("http://localhost:8080/api/paciente", {
+           
+      const response1 = await fetch("http://localhost:8080/api/paciente/add", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -71,10 +71,29 @@ export default function Cadastro() {
         body: JSON.stringify(paciente)
       });
 
-      if (response.ok) {
-        const paciente = await response.json();
+      const response2 = await fetch("http://localhost:8080/api/emailpaciente/add", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(email)
+      });
 
-        if (paciente) {
+      const response3 = await fetch("http://localhost:8080/api/cadastro/add", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(senha)
+      });
+
+
+      if (response1.ok && response2.ok && response3.ok) {
+        const paciente = await response1.json();
+        const email = await response2.json();
+        const senha = await response3.json();
+
+        if (paciente && email && senha) {
           setMsgStatus("Cadastro Realizado com Sucesso!");
           setTimeout(() => {
             setMsgStatus("");
@@ -93,6 +112,20 @@ export default function Cadastro() {
               "nr_altura": "",
               "nr_peso": "",
               "dt_data_nascimento": "",
+            });
+
+            setEmail({
+              "ds_email": "",
+              "st_email": "",
+              "id_paciente": params.id,
+              "id_email": ""
+            });
+            
+            setSenha({
+              "id_cadastro": "",
+              "id_paciente": params.id,
+              "id_email": "",
+              "cd_senha": ""
             });
           }, 5000);
         }
