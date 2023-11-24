@@ -11,9 +11,14 @@
          background-color:$cor-fundo;
          color: #333;
          padding: 20px;
+        
          li{
             font-size: 30px;
             list-style: none;
+            @media screen and (max-width: 940px){
+            font-size: 10px;
+            
+            }
             
             
             a{
@@ -26,4 +31,6 @@
            
          }
         }
+        
+       
 }

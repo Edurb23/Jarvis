@@ -8,12 +8,7 @@ import "./cabecalho.scss"
 
 export default function Cabecalho() {
    
-  const [active, setActive] = useState(false)
-    
 
-  const toggleActive = () => {
-    setActive(!active)
-  }
   
     return (
    <>
@@ -28,8 +23,8 @@ export default function Cabecalho() {
             />
           </Link>
 
-          <nav className={`nav ${active ? 'active' : ''}`}>
-           <button className='burger' onClick={toggleActive} ></button>
+          <nav>
+           
 
             <ul >
                 <li>

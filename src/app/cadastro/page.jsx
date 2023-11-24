@@ -5,7 +5,7 @@ import './cadastro.scss'
 import { useState, useEffect } from 'react'
 import { useRouter } from "next/navigation";
 
-export default function Cadastro() {
+export default function Cadastro({params}) {
 
   const router = useRouter();
 
