@@ -21,129 +21,135 @@ export default function EditarConta({params}) {
     "nr_peso": "",
     "dt_data_nascimento":"",
     "id_paciente": params.id
-   })
+  })
 
-   useEffect(()=>{
+  const [email, setEmail] = useState({
+    "ds_email": "",
+    "st_email": "",
+    "id_paciente": params.id,
+    "id_email": ""
+  })
+
+  useEffect(()=>{
     if (msgstatus)
       alert(msgstatus)
-}, [msgstatus])
-
-useEffect( () => {
-  const obeterPaciente = async() => {
-    try{
-      const responseget = await fetch(`http://localhost:8080/api/paciente/${params.id}`,{
-        method: "GET",
-        headers:{
-          "Content-Type":"application/json" 
-        }
-      });
-      let pacienteAtual = await responseget.json();
-      setPaciente(pacienteAtual)
-    }catch(error){
-      console.log(error);
-
-    }
-  }
-  obeterPaciente()
-}, [paciente.id]
-)
+  }, [msgstatus])
 
 
-const handleChange = (e)=>{
-  const {name, value} = e.target;
-  setPaciente({...paciente,[name]:value})
-}
-
-const handleSubmit = async (e) => {
-  e.preventDefault();
-  try {
-      const response = await fetch(`http://localhost:8080/api/paciente/${params.id}`,{
-          method:"PUT",
+  useEffect( () => {
+    const obeterPaciente = async() => {
+      try{
+        const responseget = await fetch(`http://localhost:8080/api/paciente/${params.id}`,{
+          method: "GET",
           headers:{
-              "Content-Type":"application/json"
-          },
-          body: JSON.stringify(paciente)
-      });
-
-      if(response.ok){
-          const paciente = await response.json();
-
-          console.log(paciente)
-
-          if(paciente){
-              setMsgStatus("Atualizado com Sucesso!");
-              setTimeout(()=>{
-                  setMsgStatus("");
-                  router.push(`/conta/${params.id}`);
-              },5000);
-          }else{
-              setMsgStatus("Ocorreu um erro!");
-              setTimeout(()=>{
-                  setMsgStatus("");
-                  setPaciente({
-                    "nm_paciente":"",
-                    "nr_cpf":"",
-                    "nr_rg":"",
-                    "fl_sexo_biologico": "",
-                    "nr_altura": "",
-                    "nr_peso": "",
-                    "dt_data_nascimento":"",
-                    "id_paciente": params.id
-                  });
-              },5000);
+            "Content-Type":"application/json" 
           }
+        });
+        let pacienteAtual = await responseget.json();
+        setPaciente(pacienteAtual)
+      }catch(error){
+        console.log(error);
+
       }
-  }catch (error) {
+    }
+    obeterPaciente()
+    }, [paciente.id]
+  )
+  useEffect( () => {
+    const obeterEmail = async() => {
+      try{
+        const responseget = await fetch(`http://localhost:8080/api/emailpaciente/${params.id}`,{
+          method: "GET",
+          headers:{
+            "Content-Type":"application/json" 
+          }
+        });
+        let emailAtual = await responseget.json();
+        setEmail(emailAtual)
+      }catch(error){
+        console.log(error);
+      }
+    }
+    obeterEmail()
+    }, [paciente.id]
+  )
+
+
+  const handleChange = (e)=>{
+    const {name, value} = e.target;
+    setPaciente({...paciente,[name]:value})
   }
-} 
 
 
-const [email, setEmail] = useState({
-  "ds_email": "",
-  "st_email": "",
-  "id_paciente": params.id,
-  "id_email": params.id
+  const handleChangeEmail = (e)=>{
+    const {name, value} = e.target;
+    setEmail({...email,[name]:value})
+  }
 
-})
 
-useEffect(() => {
-  const obeterEmail = async() => {
-    try{
-      const responseget = await fetch(`http://localhost:8080/api/emailpaciente/${params.id}`,{
-        method: "GET",
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+
+      const response1 = await fetch(`http://localhost:8080/api/paciente/update`,{
+        method:"PUT",
         headers:{
-          "Content-Type":"application/json" 
-        }
+          "Content-Type":"application/json"
+        },
+        body: JSON.stringify(paciente)
       });
-      let emailAtual = await responseget.json();
-      setEmail(emailAtual)
-    }catch(error){
-      console.log(error)
+
+      const response2 = await fetch(`http://localhost:8080/api/emailpaciente/update`,{
+        method:"PUT",
+        headers:{
+          "Content-Type":"application/json"
+        },
+        body: JSON.stringify(email)
+      });
+
+      if(response1.ok && response2.ok){
+        const paciente = await response1.json();
+        const email = await response2.json();
+
+        if(paciente && email){
+          setMsgStatus("Atualizado com Sucesso!");
+          setTimeout(()=>{
+            setMsgStatus("");
+            router.push(`/conta/${params.id}`);
+          },5000);
+        }else{
+          setMsgStatus("Ocorreu um erro!");
+          setTimeout(()=>{
+            setMsgStatus("");
+            setPaciente({
+              "nm_paciente":"",
+              "nr_cpf":"",
+              "nr_rg":"",
+              "fl_sexo_biologico": "",
+              "nr_altura": "",
+              "nr_peso": "",
+              "dt_data_nascimento":"",
+              "id_paciente": params.id
+            });
+            setEmail({
+              "ds_email": "",
+              "st_email": "",
+              "id_paciente": params.id,
+              "id_email": ""
+            });
+          },5000);
+        }
+      }
+    }catch (error) {
     }
   }
-  obeterEmail()
-}, [email.id])
-
-
-const handleChangeEmail = (e)=>{
-  const {name, value} = e.target;
-  setEmail({...email,[name]:value})
-}
-
-
-  
-  
-  
   return (
     <>
      <div className='fundo-editar'>
       <div className='caixa-editar' >
         <div>
-
           <div className='titulo-editar'>
             <h1>EDITAR CONTA</h1>
-           
-
           </div>
           <form onSubmit={handleSubmit}>
             <div className='nome'>
@@ -161,9 +167,9 @@ const handleChangeEmail = (e)=>{
             <div className='sexoBiologico'>
               <label for="sexoBiologicoID">Sexo Biológico:</label>
               <select id="sexoBiologico" name="fl_sexo_biologico" value={paciente.fl_sexo_biologico} onChange={handleChange}>
-                <option value="masculino">M</option>
-                <option value="feminino">F</option>
-                <option value="outro">I</option>
+                <option value="M">M</option>
+                <option value="F">F</option>
+                <option value="I">I</option>
               </select>
             </div>
             <div className='altura'>
@@ -174,13 +180,10 @@ const handleChangeEmail = (e)=>{
               <label for="pesoID">Peso (kg):</label>
               <input type="number" id="peso" name="nr_peso" value={paciente.nr_peso} onChange={handleChange}/>
             </div>
-
-
             <div className='email'>
               <label for="idEmail">Endereço de email</label>
-              <input type="email" name='email' id='ds_email' value={email.ds_email} onChange={handleChange} />
+              <input type="email" name='ds_email' id='ds_email' value={email.ds_email} onChange={handleChangeEmail} />
             </div>
-      
             <button className='botaoEditar'><Link className='link-editar'  href="/" >Editar</Link></button>
             <button className='botaoEditar'><Link className='link-editar'  href="/conta" >Voltar</Link></button>
           </form>
