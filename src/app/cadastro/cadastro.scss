@@ -140,6 +140,23 @@
                     border: 1px solid $cor-principal;
                 }
             }
+            .dtNascimento{
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: column;
+                position: relative;
+                box-shadow: none;
+                label{
+                    padding-bottom: 2px;
+                }
+                input{
+                    appearance: none;
+                    border-radius: 0.5rem;
+                    line-height: 1.5rem;
+                    padding: 0.5rem 1rem 0.5rem;
+                    border: 1px solid $cor-principal;
+                }
+            }
             .email{
                 box-sizing: border-box;
                 display: flex;

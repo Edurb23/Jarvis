@@ -5,7 +5,7 @@ import './cadastro.scss'
 import { useState, useEffect } from 'react'
 import { useRouter } from "next/navigation";
 
-export default function Cadastro({params}) {
+export default function Cadastro() {
 
   const router = useRouter();
 
@@ -15,24 +15,10 @@ export default function Cadastro({params}) {
     "nm_paciente": "",
     "nr_cpf": "",
     "nr_rg": "",
-    "fl_sexo_biologico": "",
+    "fl_sexo_biologico": "M",
     "nr_altura": "",
     "nr_peso": "",
     "dt_data_nascimento": "",
-  })
-
-  const [email, setEmail] = useState({
-    "ds_email": "",
-    "st_email": "A",
-    "id_paciente": "",
-    "id_email": ""
-  })
-
-  const [senha, setSenha] = useState({
-    "id_cadastro": "",
-    "id_paciente": "",
-    "id_email": "",
-    "cd_senha": ""
   })
 
   useEffect(() => {
@@ -40,30 +26,18 @@ export default function Cadastro({params}) {
       alert(msgstatus)
   }, [msgstatus])
 
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setPaciente({ ...paciente, [name]: value })
   }
 
 
-  const handleChangeEmail = (e) => {
-    const { name, value } = e.target;
-    setEmail({ ...email, [name]: value })
-  }
-
-
-  const handleChangeSenha = (e) => {
-    const { name, value } = e.target;
-    setSenha({ ...senha, [name]: value })
-  }
-
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+
            
-      const response1 = await fetch("http://localhost:8080/api/paciente/add", {
+      const response = await fetch("http://localhost:8080/api/paciente/add", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -71,40 +45,21 @@ export default function Cadastro({params}) {
         body: JSON.stringify(paciente)
       });
 
-      const response2 = await fetch("http://localhost:8080/api/emailpaciente/add", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(email)
-      });
 
-      const response3 = await fetch("http://localhost:8080/api/cadastro/add", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(senha)
-      });
-
-
-      if (response1.ok && response2.ok && response3.ok) {
-        const paciente = await response1.json();
-        const email = await response2.json();
-        const senha = await response3.json();
-
-        if (paciente && email && senha) {
+      if (response.ok) {
+        const statuspaciente = response.status;
+        if (statuspaciente == 201) {
           setMsgStatus("Cadastro Realizado com Sucesso!");
           setTimeout(() => {
             setMsgStatus("");
-            router.push(`/conta/${params.id}`);
-          }, 5000);
+            router.push(`/login`);
+          }, 500);
         } else {
           console.error("Erro ao analisar resposta JSON:", error);
           setMsgStatus("Ocorreu um erro!");
           setTimeout(() => {
             setMsgStatus("");
-
+            router.push(`/cadastro`);
             setPaciente({
               "nm_paciente": "",
               "nr_cpf": "",
@@ -112,24 +67,9 @@ export default function Cadastro({params}) {
               "fl_sexo_biologico": "",
               "nr_altura": "",
               "nr_peso": "",
-              "dt_data_nascimento": "",
+              "dt_nascimento": "",
             });
-
-            setEmail({
-              "ds_email": "",
-              "st_email": "A",
-              "id_paciente": "",
-              "id_email": ""
-            });
-
-            setSenha({
-              "id_cadastro": "",
-              "id_paciente": "",
-              "id_email": "",
-              "cd_senha": ""
-            });
-
-          }, 5000);
+          }, 500);
         }
       }
     } catch (error) {
@@ -158,16 +98,23 @@ export default function Cadastro({params}) {
               <label for="idCpf">CPF</label>
               <input type="text" id="cpf" name="nr_cpf" required  value={paciente.nr_cpf} onChange={handleChange}/>
             </div>
+
             <div className='rg'>
               <label for="idRg">RG</label>
               <input type="text" id="rg" name="nr_rg" required  value={paciente.nr_rg} onChange={handleChange} />
             </div>
+
+            <div className='dtNascimento'>
+              <label for="datanasc">Data de Nascimento</label>
+              <input type="date" id="datanasc" name="dt_nascimento" required  value={paciente.dt_nascimento} onChange={handleChange} />
+            </div>
+
             <div className='sexoBiologico'>
               <label for="sexoBiologicoID">Sexo Biológico:</label>
               <select id="sexoBiologico" name="fl_sexo_biologico" required value={paciente.fl_sexo_biologico} onChange={handleChange}>
                 <option value="M">M</option>
                 <option value="F">F</option>
-                 </select>
+              </select>
             </div>
             <div className='altura'>
               <label for="alturaID">Altura (cm):</label>
@@ -177,15 +124,7 @@ export default function Cadastro({params}) {
               <label for="pesoID">Peso (kg):</label>
               <input type="number" id="peso" name="nr_peso" required value={paciente.nr_peso} onChange={handleChange} />
             </div>
-            <div className='email'>
-              <label for="idEmail">Endereço de email</label>
-              <input type="email" name='ds_email' id='idEmail' required value={email.ds_email} onChange={handleChangeEmail} />
-            </div>
-            <div className='senha'>
-              <label for="idSenha">Senha</label>
-              <input type="password" name='cd_senha' id='idSenha' required value={senha.cd_senha} onChange={handleChangeSenha} />
-            </div>
-            <Link href={`/conta/${params.id}`}><button className='botaoLogin'>CADASTRAR</button></Link>
+            <button className='botaoLogin'>CADASTRAR</button>
           </form>
         </div>
       </div>
