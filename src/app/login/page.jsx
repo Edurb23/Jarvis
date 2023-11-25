@@ -33,7 +33,6 @@ export default function Login() {
         });
         if(response.ok){
           const user = await response.json();
-  
           if(user){
            
             const token = Math.random().toString(36).substring(2) + Math.random().toString(36).substring(2);
@@ -49,8 +48,8 @@ export default function Login() {
             setTimeout(()=>{
               setMsgStatus("");
   
-              navigate.push("/conta");
-            },5000);
+              navigate.push(`/conta/${user.id_paciente}`);
+            },500);
   
   
           }else{
@@ -62,7 +61,7 @@ export default function Login() {
                     "email":"",
                     "senha":""
                 });
-            },5000);
+            },500);
           }
         }
       }catch (error) 
