@@ -30,7 +30,6 @@ export default function Conta({params}) {
          }
        });
        let paciente = await responseget.json();
-       console.log(paciente)
        setPaciente(paciente);
       }catch(erro){
        console.log(erro);
@@ -100,7 +99,10 @@ export default function Conta({params}) {
 
 
 
-   
+const logout = () => {
+  sessionStorage.removeItem("token-user");
+  window.location.href = "/login";
+}
 
   
 
@@ -140,18 +142,18 @@ export default function Conta({params}) {
             </div>
             <div className='altura'>
               <label for="alturaID">Altura (cm):</label>
-              <input type="number" id="altura" name="alturaId" value={paciente.nr_altura} />
+              <input type="number" id="altura" name="alturaId" value={paciente.nr_altura}/>
             </div>
             <div className='peso'>
               <label for="pesoID">Peso (kg):</label>
-              <input type="number" id="peso" name="peso" value={paciente.nr_peso} />
+              <input type="number" id="peso" name="peso" value={paciente.nr_peso}/>
             </div>
             <div className='email'>
               <label for="emailID">Email:</label>
-              <input type="email" name='email' id='idEmail' value={email.ds_email}  />
+              <input type="email" name='email' id='idEmail' value={email.ds_email}/>
             </div>
             <button className='botaoEditar'><Link className='link-editar'  href={`/conta/editar/${params.id}`} >Editar</Link></button>
-            <button className='botaoExcluir' onClick={handleClick}><Link className='link-excluir'  href="/" >Excluir Conta</Link></button>
+            <button className='botaoLogout'><Link className='link-Logout' href="/login" onClick={logout}>Logout</Link></button>
           </form>
         </div>
       </div>

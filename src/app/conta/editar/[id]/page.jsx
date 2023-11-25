@@ -20,13 +20,13 @@ export default function EditarConta({params}) {
     "nr_altura": "",
     "nr_peso": "",
     "dt_data_nascimento":"",
-    "id_paciente": params.id
+    "id_paciente": id
   })
 
   const [email, setEmail] = useState({
     "ds_email": "",
     "st_email": "",
-    "id_paciente": params.id,
+    "id_paciente": id,
     "id_email": ""
   })
 
@@ -39,7 +39,7 @@ export default function EditarConta({params}) {
   useEffect( () => {
     const obeterPaciente = async() => {
       try{
-        const responseget = await fetch(`http://localhost:8080/api/paciente/${params.id}`,{
+        const responseget = await fetch(`http://localhost:8080/api/paciente/${id}`,{
           method: "GET",
           headers:{
             "Content-Type":"application/json" 
@@ -58,7 +58,7 @@ export default function EditarConta({params}) {
   useEffect( () => {
     const obeterEmail = async() => {
       try{
-        const responseget = await fetch(`http://localhost:8080/api/emailpaciente/${params.id}`,{
+        const responseget = await fetch(`http://localhost:8080/api/emailpaciente/${id}`,{
           method: "GET",
           headers:{
             "Content-Type":"application/json" 
@@ -91,6 +91,9 @@ export default function EditarConta({params}) {
     e.preventDefault();
     try {
 
+
+
+      
       const response1 = await fetch(`http://localhost:8080/api/paciente/update`,{
         method:"PUT",
         headers:{
@@ -99,24 +102,32 @@ export default function EditarConta({params}) {
         body: JSON.stringify(paciente)
       });
 
+
+
+
       const response2 = await fetch(`http://localhost:8080/api/emailpaciente/update`,{
         method:"PUT",
         headers:{
           "Content-Type":"application/json"
         },
         body: JSON.stringify(email)
-      });
+      });      
+      
+
+
+
 
       if(response1.ok && response2.ok){
-        const paciente = await response1.json();
-        const email = await response2.json();
 
-        if(paciente && email){
+        const statusPaciente = response1.status;
+        const statusEmail = response2.status;
+        
+        if(statusPaciente == 201 && statusEmail == 201){
           setMsgStatus("Atualizado com Sucesso!");
           setTimeout(()=>{
             setMsgStatus("");
-            router.push(`/conta/${params.id}`);
-          },5000);
+            router.push(`/conta/${id}`);
+          },500);
         }else{
           setMsgStatus("Ocorreu um erro!");
           setTimeout(()=>{
@@ -129,15 +140,16 @@ export default function EditarConta({params}) {
               "nr_altura": "",
               "nr_peso": "",
               "dt_data_nascimento":"",
-              "id_paciente": params.id
+              "id_paciente": id
             });
             setEmail({
               "ds_email": "",
               "st_email": "",
-              "id_paciente": params.id,
+              "id_paciente": id,
               "id_email": ""
             });
-          },5000);
+            router.push(`/conta/${id}`);
+          },500);
         }
       }
     }catch (error) {
@@ -183,8 +195,8 @@ export default function EditarConta({params}) {
               <label for="idEmail">Endereço de email</label>
               <input type="email" name='ds_email' id='ds_email' value={email.ds_email} onChange={handleChangeEmail} />
             </div>
-            <button className='botaoEditar'><Link className='link-editar'  href="/" >Editar</Link></button>
-            <button className='botaoEditar'><Link className='link-editar'  href="/conta" >Voltar</Link></button>
+            <button className='botaoEditar'>Editar</button>
+            <button className='botaoEditar'><Link className='link-editar'  href={`/conta/${id}`} >Voltar</Link></button>
           </form>
         </div>
       </div>
