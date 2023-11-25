@@ -99,7 +99,10 @@ export default function Conta({params}) {
 
 
 
-   
+const logout = () => {
+  sessionStorage.removeItem("token-user");
+  window.location.href = "/login";
+}
 
   
 
@@ -150,7 +153,7 @@ export default function Conta({params}) {
               <input type="email" name='email' id='idEmail' value={email.ds_email}/>
             </div>
             <button className='botaoEditar'><Link className='link-editar'  href={`/conta/editar/${params.id}`} >Editar</Link></button>
-            <button className='botaoExcluir' onClick={handleClick}><Link className='link-excluir'  href="/" >Excluir Conta</Link></button>
+            <button className='botaoLogout'><Link className='link-Logout' href="/login" onClick={logout}>Logout</Link></button>
           </form>
         </div>
       </div>
